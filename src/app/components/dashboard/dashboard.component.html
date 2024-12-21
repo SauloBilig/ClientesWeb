@@ -1,0 +1,43 @@
+<div *ngIf="isLoading" class="loading-overlay"> <mat-spinner></mat-spinner></div>
+
+<div class="container mt-3">
+    <div class="card">
+        <div class="card-body">
+
+
+            <h4>Dashboard de clientes</h4>
+            <p>Seja bem vindo ao sistema de clientes</p>
+
+        </div>
+    </div>
+</div>
+<div class="container mt-3"   *ngIf="!isLoading">
+    <div class="card">
+        <div class="card-body">
+
+
+            <div class="row">
+                <div class="col-md-7">
+                    <div [chart]="grafico"></div>
+                </div>
+                <div class="col-md-5">
+                    <table class="table table-sm table-striped">
+                        <thead>
+                            <tr>
+                                <th>Categoria</th>
+                                <th>Quantidade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of dados">
+                                <th>{{item.nomeCategoria}}</th>
+                                <th>{{item.quantidadeClientes}}</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
